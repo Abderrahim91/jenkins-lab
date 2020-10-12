@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                sh 'mvn -f jenkins-lab/pom.xml clean package'
+                sh 'mvn  clean package'
             }
             post {
                 success {
