@@ -1,15 +1,13 @@
   tools {
-        maven 'Maven 3.6.3'
+        maven 'Maven 3.26.3'
     }
 pipeline {
     agent any
     stages {
         stage('Build Application') {
             steps {
-            script{
                 sh 'mvn clean package'
             }
-          }
             post {
                 success {
                     echo "Now Archiving the Artifacts...."
