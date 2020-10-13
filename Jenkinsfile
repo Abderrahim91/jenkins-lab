@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
+            script{
                 sh 'mvn clean package'
             }
+          }
             post {
                 success {
                     echo "Now Archiving the Artifacts...."
@@ -15,9 +17,7 @@ pipeline {
         stage('Deploy in Staging Environment'){
             steps{
                 build job: 'Deploy_Application_Staging_Env'
- 
             }
-            
         }
         stage('Deploy to Production'){
             steps{
