@@ -1,7 +1,7 @@
 pipeline {
     agent any
   tools {
-        maven 'Maven 3.6.3'
+        maven 'apche-maven'
     }
     stages {
         stage('Build Application') {
